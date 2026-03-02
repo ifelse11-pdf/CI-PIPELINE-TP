@@ -17,8 +17,10 @@ jobs:
              with:
                 python-version : "3.11"
   
-           - name : Lancer  le Linter
-             run : |
+           - name : installer flake8
+             run : pip install flake8
+           - name : lancer lint
+             run :  |
               flake8 app --count --select=E9,F63,F7,F82,F482 --show-source --statistics
               flake8 app --count --max-complexity=10 --max-line-length=127 --statistics
               flake8 test --count --max-line-length=127 --statistics
