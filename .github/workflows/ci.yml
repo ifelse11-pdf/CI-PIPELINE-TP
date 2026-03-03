@@ -31,6 +31,8 @@ jobs:
         runs-on: ubuntu-latest
         needs: Lint
         steps:
+           - name: Installer les dépendances
+             run: pip install -r requirements.txt
            - name : Exécuter pytest avec couverture
              run : pytest  tests/ -v --cov=src
     build:
